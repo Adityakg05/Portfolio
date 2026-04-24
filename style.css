@@ -120,12 +120,13 @@ ul {
 }
 
 .btn-primary {
-    background: var(--text-primary);
-    color: var(--bg-main);
+    background: var(--gradient-accent);
+    color: #ffffff;
 }
 .btn-primary:hover {
-    background: #e2e8f0;
+    filter: brightness(1.1);
     transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(56, 189, 248, 0.4);
 }
 
 .btn-secondary, .btn-outline {
