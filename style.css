@@ -2,20 +2,20 @@
    CSS Variables & Tokens
    ========================================================================== */
    :root {
-    /* Color Palette - Soft Dark Theme */
-    --bg-main: #0f172a;        /* Slate 900 */
-    --bg-surface: #1e293b;     /* Slate 800 */
-    --bg-surface-hover: #293548; /* Slate 750 (softer hover) */
+    /* Color Palette - Deep Space/Portal Theme */
+    --bg-main: #030014;        /* Deep Space Black/Purple */
+    --bg-surface: #0f0a2a;     /* Deep Purple Surface */
+    --bg-surface-hover: #1a1438; /* Lighter Purple Surface */
     
     --text-primary: #f8fafc;   /* Slate 50 */
     --text-secondary: #cbd5e1; /* Slate 300 */
-    --text-muted: #94a3b8;     /* Slate 400 */
+    --text-muted: #8b9bb4;     /* Muted Slate */
     
-    --accent-primary: #38bdf8;   /* Sky 400 */
-    --accent-secondary: #818cf8; /* Indigo 400 */
+    --accent-primary: #a855f7;   /* Bright Purple */
+    --accent-secondary: #6366f1; /* Deep Indigo */
     
     --gradient-accent: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
-    --gradient-glow: linear-gradient(135deg, rgba(56, 189, 248, 0.1), rgba(129, 140, 248, 0.1));
+    --gradient-glow: linear-gradient(135deg, rgba(168, 85, 247, 0.15), rgba(99, 102, 241, 0.15));
 
     /* Typography */
     --font-primary: 'Inter', sans-serif;
@@ -126,7 +126,7 @@ ul {
 .btn-primary:hover {
     filter: brightness(1.1);
     transform: translateY(-2px);
-    box-shadow: 0 4px 15px rgba(56, 189, 248, 0.4);
+    box-shadow: 0 4px 15px rgba(168, 85, 247, 0.4);
 }
 
 .btn-secondary, .btn-outline {
@@ -249,19 +249,123 @@ ul {
     flex-wrap: wrap;
 }
 
-/* Background blob */
-.glow-blob {
-    position: absolute;
-    top: 20%;
-    right: 15%;
-    width: 350px;
-    height: 350px;
-    background: var(--gradient-glow);
-    border-radius: 50%;
-    filter: blur(80px);
-    z-index: 1;
+/* =============================================
+   CANVAS BACKGROUND
+   ============================================= */
+#bg-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 0;
     pointer-events: none;
 }
+
+/* Background Effects – Deep Space + Grid Pattern */
+.bg-effects {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 0;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+/* === Dot Grid Pattern === */
+.stars {
+    position: absolute;
+    inset: 0;
+    background-image:
+        radial-gradient(circle, rgba(168, 85, 247, 0.18) 1px, transparent 1px);
+    background-size: 36px 36px;
+    opacity: 0.6;
+    mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black 40%, transparent 100%);
+    -webkit-mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black 40%, transparent 100%);
+}
+
+/* === Top Portal Glow === */
+.top-glow {
+    position: absolute;
+    top: -30vh;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 120vw;
+    height: 70vh;
+    background: radial-gradient(ellipse 65% 55% at 50% 0%,
+        rgba(168, 85, 247, 0.5) 0%,
+        rgba(99, 102, 241, 0.25) 40%,
+        transparent 75%);
+    filter: blur(45px);
+}
+
+/* === Bright Portal Core (white tip) === */
+.top-glow::after {
+    content: '';
+    position: absolute;
+    top: -5vh;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 28vw;
+    height: 22vh;
+    background: radial-gradient(ellipse at center,
+        rgba(255, 255, 255, 1) 0%,
+        rgba(216, 180, 254, 0.85) 25%,
+        rgba(168, 85, 247, 0.5) 55%,
+        transparent 80%);
+    filter: blur(18px);
+    border-radius: 50%;
+}
+
+/* === Floating Orb Left === */
+.bg-effects::before {
+    content: '';
+    position: absolute;
+    bottom: 20%;
+    left: -10%;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle,
+        rgba(99, 102, 241, 0.2) 0%,
+        transparent 65%);
+    border-radius: 50%;
+    animation: drift 12s ease-in-out infinite alternate;
+    filter: blur(30px);
+}
+
+/* === Floating Orb Right === */
+.bg-effects::after {
+    content: '';
+    position: absolute;
+    top: 40%;
+    right: -5%;
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle,
+        rgba(168, 85, 247, 0.18) 0%,
+        transparent 65%);
+    border-radius: 50%;
+    animation: drift 15s ease-in-out infinite alternate-reverse;
+    filter: blur(35px);
+}
+
+@keyframes drift {
+    0%   { transform: translateY(0px) scale(1); }
+    100% { transform: translateY(-40px) scale(1.05); }
+}
+
+/* === Bottom vignette glow === */
+.stars::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse 100% 60% at 50% 100%,
+        rgba(168, 85, 247, 0.08) 0%,
+        transparent 70%);
+}
+
 
 /* ==========================================================================
    About Section
@@ -325,8 +429,8 @@ ul {
 }
 
 .detailed-project-card.featured {
-    border-top: 4px solid var(--accent-primary);
-    background: linear-gradient(180deg, rgba(30, 41, 59, 0.8) 0%, rgba(15, 23, 42, 0.8) 100%);
+    border-top: none;
+    background: var(--bg-surface);
 }
 
 .project-header {
