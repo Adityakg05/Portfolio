@@ -417,7 +417,7 @@ ul {
 .detailed-project-card {
     background: var(--bg-surface);
     border-radius: var(--border-radius);
-    padding: 2.5rem;
+    padding: 1.8rem 2rem;
     border: 1px solid rgba(255, 255, 255, 0.05);
     transition: var(--transition-base);
 }
@@ -475,34 +475,33 @@ ul {
 }
 
 .project-main-desc {
-    font-size: 1.05rem;
+    font-size: 1rem;
     color: var(--text-secondary);
-    margin-bottom: 2rem;
-    line-height: 1.6;
+    margin-bottom: 1.2rem;
+    line-height: 1.55;
 }
 
 /* Problem Solving Box inside Card */
 .problem-solving-box {
     background: rgba(0, 0, 0, 0.15);
     border-radius: 6px;
-    padding: 1.5rem;
-    margin-bottom: 2rem;
+    padding: 1rem 1.2rem;
+    margin-bottom: 1.2rem;
     border-left: 2px solid var(--accent-secondary);
 }
 
 .problem-solving-box h4 {
-    font-size: 1rem;
-    margin-bottom: 1.2rem;
+    margin-bottom: 0.75rem;
     color: var(--text-primary);
     text-transform: uppercase;
     letter-spacing: 0.5px;
-    font-size: 0.85rem;
+    font-size: 0.8rem;
 }
 
 .ps-row {
-    margin-bottom: 0.8rem;
-    font-size: 0.95rem;
-    line-height: 1.5;
+    margin-bottom: 0.45rem;
+    font-size: 0.93rem;
+    line-height: 1.45;
 }
 
 .ps-label {
@@ -516,9 +515,9 @@ ul {
     display: flex;
     align-items: center;
     flex-wrap: wrap;
-    gap: 8px;
-    margin: 1.5rem 0;
-    padding: 1rem;
+    gap: 6px;
+    margin: 0.9rem 0;
+    padding: 0.7rem;
     background: rgba(255, 255, 255, 0.03);
     border-radius: 4px;
     border: 1px dashed rgba(255, 255, 255, 0.1);
