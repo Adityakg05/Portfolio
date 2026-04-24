@@ -22,7 +22,7 @@
     
     /* Spacing & Layout */
     --container-width: 1000px;
-    --section-padding: 90px 0;
+    --section-padding: 100px 0;
     
     /* Effects */
     --transition-fast: 0.2s ease-in-out;
@@ -49,7 +49,7 @@ body {
     font-family: var(--font-primary);
     background-color: var(--bg-main);
     color: var(--text-secondary);
-    line-height: 1.6;
+    line-height: 1.7;
     overflow-x: hidden;
 }
 
@@ -318,8 +318,9 @@ ul {
 }
 
 .detailed-project-card:hover {
-    border-color: rgba(255, 255, 255, 0.15);
-    box-shadow: var(--shadow-soft);
+    border-color: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.3);
+    transform: translateY(-4px);
 }
 
 .detailed-project-card.featured {
@@ -400,9 +401,9 @@ ul {
 }
 
 .ps-label {
-    font-weight: 600;
+    font-weight: 700;
     color: var(--text-primary);
-    margin-right: 5px;
+    margin-right: 6px;
 }
 
 /* Flow Diagram for System Flow */
