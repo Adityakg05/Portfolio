@@ -42,6 +42,7 @@
 
 html {
     scroll-behavior: auto;
+    height: auto;
 }
 
 body {
@@ -50,6 +51,8 @@ body {
     color: var(--text-secondary);
     line-height: 1.7;
     overflow-x: hidden;
+    min-height: 100vh;
+    height: auto;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -87,6 +90,14 @@ ul {
 
 .section {
     padding: var(--section-padding);
+    min-height: auto;
+    height: auto;
+    overflow: visible;
+}
+
+/* Projects section specific padding to prevent clipping */
+#projects {
+    padding-bottom: 80px;
 }
 
 
@@ -380,7 +391,7 @@ ul {
     border: 1px solid rgba(255, 255, 255, 0.05);
     box-shadow: var(--shadow-soft);
     position: relative;
-    overflow: hidden;
+    overflow: visible;
     font-size: 1.1rem;
     line-height: 1.8;
     color: var(--text-secondary);
@@ -423,6 +434,8 @@ ul {
     padding: 1.8rem 2rem;
     border: 1px solid rgba(255, 255, 255, 0.05);
     transition: var(--transition-base);
+    height: auto;
+    min-height: unset;
 }
 
 .detailed-project-card:hover {
@@ -668,6 +681,8 @@ ul {
 footer {
     text-align: center;
     padding: 2rem 0;
+    margin-top: 60px;
+    padding-bottom: 20px;
     color: var(--text-muted);
     font-size: 0.9rem;
 }
