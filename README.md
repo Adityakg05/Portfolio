@@ -1,6 +1,6 @@
 # Developer Portfolio
 
-A clean, modern, and professional developer portfolio website built with HTML, CSS, and minimal JavaScript
+A clean, modern, and professional developer portfolio website built with HTML, CSS, and minimal JavaScript.
 
 ## Features
 - Fully responsive (mobile + desktop)
