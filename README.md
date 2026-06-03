@@ -11,19 +11,17 @@ A clean, modern, and professional developer portfolio website built with HTML, C
 
 ## Folder Structure
 ```
-c:\Users\adity\Desktop\PORTFOLIO\
-│
-├── index.html        # Main HTML file containing all sections
-├── css/
-│   └── style.css     # Styling, theme variables, and responsive queries
-├── js/
-│   └── script.js     # Scroll animations, sticky nav, and mobile menu logic
+PORTFOLIO/
+├── index.html              # Main HTML file containing all sections
+├── style.css               # Styling, theme variables, and responsive queries
+├── script.js               # Scroll animations, sticky nav, and mobile menu logic
+├── ADITYA_KRG_CV01.pdf     # Resume (linked from the Hero section)
 └── README.md
 ```
 
 ## How to Customize
 1. Open `index.html` and update the personal details (Name, Titles, Emails, GitHub links).
-2. For the resume download, place your PDF inside the project and update the `href="#"` in the "Download Resume" button in the Hero Section.
+2. To update the resume, replace `ADITYA_KRG_CV01.pdf` in the project root and keep the Hero Resume button `href` in `index.html` in sync (currently `ADITYA_KRG_CV01.pdf`).
 3. Replace the placeholder hrefs (`#`) in the projects section with actual links.
 4. Colors can be easily tweaked by changing the CSS variables inside `:root` at the top of `css/style.css`.
 
